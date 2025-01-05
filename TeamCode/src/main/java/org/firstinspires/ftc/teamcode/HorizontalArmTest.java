@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.util.HorizontalArm;
+import org.firstinspires.ftc.teamcode.utilities.HorizontalArm;
 
 @Autonomous(name = "Horizontal Arm Test", group = "Test")
 public class HorizontalArmTest extends LinearOpMode {
@@ -12,27 +12,27 @@ public class HorizontalArmTest extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         final long defaultWait = 1000;
 
-        HorizontalArm arm = new HorizontalArm(hardwareMap);
+        HorizontalArm hArm = new HorizontalArm(hardwareMap);
 
         waitForStart();
 
-        arm.openHand();
+        hArm.openHand();
         sleep(defaultWait);
-        arm.closeHand();
+        hArm.closeHand();
         sleep(defaultWait);
-        arm.openHand();
-        sleep(defaultWait);
-
-        arm.moveToExtensionDistance(9);
-        sleep(defaultWait);
-        arm.moveToExtensionDistance(3);
-        sleep(defaultWait);
-        arm.rotateHandDown();
-        sleep(defaultWait);
-        arm.rotateHandUp();
+        hArm.openHand();
         sleep(defaultWait);
 
-        arm.moveToExtensionDistance(0);
+        hArm.moveToExtensionDistance(9);
+        sleep(defaultWait);
+        hArm.moveToExtensionDistance(3);
+        sleep(defaultWait);
+        hArm.rotateHandDown();
+        sleep(defaultWait);
+        hArm.rotateHandUp();
+        sleep(defaultWait);
+
+        hArm.moveToExtensionDistance(0);
         sleep(defaultWait);
     }
 }
