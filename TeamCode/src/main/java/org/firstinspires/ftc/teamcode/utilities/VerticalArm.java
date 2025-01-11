@@ -30,7 +30,7 @@ public class VerticalArm {
         handLeftServo = hardwareMap.get(Servo.class, "handLeft");
         handRightServo = hardwareMap.get(Servo.class, "handRight");
 
-        armMotor = hardwareMap.get(DcMotor.class, "vArmMotor");
+        armMotor = hardwareMap.get(DcMotor.class, "vArm");
         armMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         armMotor.setTargetPosition(defaultStartingPosition);
         armMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

@@ -22,9 +22,9 @@ import org.firstinspires.ftc.teamcode.messages.ThreeDeadWheelInputsMessage;
 @Config
 public final class ThreeDeadWheelLocalizer implements Localizer {
     public static class Params {
-        public double par0YTicks = -2030.5763; // y position of the first parallel encoder (in tick units)
-        public double par1YTicks = 2103.2663; // y position of the second parallel encoder (in tick units)
-        public double perpXTicks = -2375.3997; // x position of the perpendicular encoder (in tick units)
+        public double par0YTicks = -2015.1847; // y position of the first parallel encoder (in tick units)
+        public double par1YTicks = 2101.2975; // y position of the second parallel encoder (in tick units)
+        public double perpXTicks = -2331.6031; // x position of the perpendicular encoder (in tick units)
     }
 
     public static Params PARAMS = new Params();
