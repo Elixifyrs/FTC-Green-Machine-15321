@@ -37,6 +37,7 @@ public class TwoSampleHang extends LinearOpMode {
 
         //Move back from bar and prime sample 1
         Action primeSample1 = drive.actionBuilder(beginPose)
+                .lineToY(-34)
                 .splineToConstantHeading(new Vector2d(40,-38), Math.toRadians(90))
                 .lineToYConstantHeading(-8)
                 .splineToConstantHeading(new Vector2d(50,-4), Math.toRadians(90),
@@ -66,11 +67,13 @@ public class TwoSampleHang extends LinearOpMode {
         //Take Specimen 1
         Action takeSpecimen1 = drive.actionBuilder(beginPose)
                 .lineToYConstantHeading(-54.5, new TranslationalVelConstraint(15))
-                .waitSeconds(250)
+                .waitSeconds(.250)
                 .build();
 
         //Move to the bar
         Action moveToBar1 = drive.actionBuilder(beginPose)
+                .waitSeconds(250)
+                .lineToYConstantHeading(-54.5, new TranslationalVelConstraint(15))
                 .splineToLinearHeading(new Pose2d(3,-30, Math.toRadians(90)), Math.toRadians(270))
                 .waitSeconds(.1)
                 .lineToYConstantHeading(-26)

@@ -16,13 +16,14 @@ public class MeepMeepTesting {
                 .setConstraints(52.48291908330528, 52.48291908330528, Math.toRadians(194.5102), Math.toRadians(187.94061000000002), 15.35)
                 .build();
 
-        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(0, 0, 0))
+        myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(26, -55.5, Math.toRadians(90)))
                 .waitSeconds(1)
                 .splineToConstantHeading(new Vector2d(0,-30), Math.toRadians(90))
                 .waitSeconds(.1)
                 .lineToY(-26)
-                .lineToYConstantHeading(-38)
-                .lineToXConstantHeading(40)
+                //Add backwards movement
+                .lineToY(-34)
+                .splineToConstantHeading(new Vector2d(40,-38), Math.toRadians(90))
                 .lineToYConstantHeading(-8)
                 .splineToConstantHeading(new Vector2d(50,-4), Math.toRadians(90),
                         new TranslationalVelConstraint(15))
@@ -34,9 +35,14 @@ public class MeepMeepTesting {
                 .lineToY(-48)
                 .splineToLinearHeading(new Pose2d(50,-46, Math.toRadians(270)), Math.toRadians(90))
                 .waitSeconds(.1)
-                .lineToYConstantHeading(-54.5, new TranslationalVelConstraint(15))
-                .waitSeconds(250)
-                .splineToLinearHeading(new Pose2d(3,-30, Math.toRadians(90)), Math.toRadians(270))
+                .lineToYConstantHeading(-54.5,
+                        new TranslationalVelConstraint(15))
+                //Made 250 sec to .25
+                .waitSeconds(.25)
+                //Added a backwards motion away from wall
+                .lineToYConstantHeading(-40,
+                        new TranslationalVelConstraint(15))
+                .splineToLinearHeading(new Pose2d(3,-40, Math.toRadians(90)), Math.toRadians(90))
                 .waitSeconds(.1)
                 .lineToYConstantHeading(-26)
                 .build());
